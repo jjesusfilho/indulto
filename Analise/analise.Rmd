@@ -1,0 +1,114 @@
+---
+title: "Análise das decisões judiciais sobre indulto e comutação de pena"
+author: "IPEA"
+date: "8/5/2017"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r include=FALSE}
+library(limer)
+library(tidyverse)
+library(stringr)
+library(reshape)
+library(ggplot2)
+library(cowplot)
+library(RColorBrewer)
+```
+
+```{r echo=F, message=F, include=F}
+options(lime_api="http://josejesus.info/lime/index.php/admin/remotecontrol")
+options(lime_username="jjesusfilho")
+options(lime_password="xx446644")
+get_session_key()
+
+data <- get_responses(384221,
+                      sHeadingType = "code"
+)  # Get results from survey
+
+
+## Infelizmente o API não tem uma boa interface para lista as questões. O procedimento abaxo faz isso
+
+nomes<-names(get_responses(384221,
+                           sHeadingType = "full"
+))
+
+nomes<-str_replace_all(nomes,"\\.(?=\\w)"," ")
+
+dic<-data.frame(var=names(data),descricao=nomes)
+
+release_session_key()
+
+attributes(data)$variable.labels<-nomes
+
+```
+
+
+## Análise descritiva
+
+### Sexo
+
+Conforme se verifica, a maioria das decisões refere-se a pessoas do sexo masculino.
+
+#### Gráfico 1 - Distribuição das decisões sobre indulto conforme o sexo do condenado
+
+```{r echo=F, message=F,fig.height=5,fig.width=8}
+ggplot(data,aes(x=A6,fill=A6))+
+  geom_bar(stat="count")+
+  labs(x="Sexo",y="Quantidade",
+       caption="Fonte: TJSP,TJRJ,TJSC,TJPE,TJDFT")+
+  geom_text(stat="count",aes(label=..count..), vjust=-.5)+
+  scale_fill_manual(values=c("purple","darkgreen"),
+                    guide_legend("Sexo"))+
+  theme(
+    legend.position = "bottom"
+  )
+```
+
+### Unidade federativa
+
+A unidade federativa onde logramos obter mais casos foi o Pernambuco...
+
+#### Gráfico 2 - Distribuição das decisões sobre indulto conforme a unidade federativa do Tribunal de Justiça
+
+```{r echo=F, message=F,fig.height=5,fig.width=8}
+
+  
+ggplot(data,aes(x=A1,fill=A1))+
+  geom_bar(stat="count")+
+  labs(x="Unidade federativa",y="Quantidade",
+       caption="Fonte: TJSP,TJRJ,TJSC,TJPE,TJDFT")+
+  geom_text(stat="count",aes(label=..count..), vjust=-.5)+
+  scale_fill_manual(values=brewer.pal(3,"Set1"),
+                    guide_legend("UF"))+
+  theme(
+    legend.position = "bottom"
+  )
+
+
+```
+
+### Cor do condenado
+
+#### Gráfico 3 Distribuição das decisões sobre indulto conforme a cor do condenado
+
+```{r echo=F, message=F,fig.height=5,fig.width=8}
+
+ggplot(data,aes(x=A10,fill=A10))+
+  geom_bar(stat="count")+
+  labs(x="Cor",y="Quantidade",
+       caption="Fonte: TJSP,TJRJ,TJSC,TJPE,TJDFT")+
+  geom_text(stat="count",aes(label=..count..), vjust=-.5)+
+  scale_fill_manual(values=brewer.pal(4,"Set1"),
+                    guide_legend("Cor"))+
+  theme(
+    legend.position = "bottom"
+  )
+
+```
+
+
