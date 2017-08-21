@@ -1,0 +1,954 @@
+17/08/12 10:32:00 INFO SparkContext: Running Spark version 2.1.0
+17/08/12 10:32:00 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/08/12 10:32:00 INFO SecurityManager: Changing view acls to: rstudio
+17/08/12 10:32:00 INFO SecurityManager: Changing modify acls to: rstudio
+17/08/12 10:32:00 INFO SecurityManager: Changing view acls groups to: 
+17/08/12 10:32:00 INFO SecurityManager: Changing modify acls groups to: 
+17/08/12 10:32:00 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(rstudio); groups with view permissions: Set(); users  with modify permissions: Set(rstudio); groups with modify permissions: Set()
+17/08/12 10:32:00 INFO Utils: Successfully started service 'sparkDriver' on port 41598.
+17/08/12 10:32:00 INFO SparkEnv: Registering MapOutputTracker
+17/08/12 10:32:00 INFO SparkEnv: Registering BlockManagerMaster
+17/08/12 10:32:00 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+17/08/12 10:32:00 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+17/08/12 10:32:00 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-bbc78d37-7be7-4e0a-b8fd-2f974014257d
+17/08/12 10:32:01 INFO MemoryStore: MemoryStore started with capacity 366.3 MB
+17/08/12 10:32:01 INFO SparkEnv: Registering OutputCommitCoordinator
+17/08/12 10:32:01 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+17/08/12 10:32:01 INFO SparkUI: Bound SparkUI to 127.0.0.1, and started at http://127.0.0.1:4040
+17/08/12 10:32:01 INFO SparkContext: Added JAR file:/home/rstudio/R/x86_64-pc-linux-gnu-library/3.4/sparklyr/java/sparklyr-2.1-2.11.jar at spark://127.0.0.1:41598/jars/sparklyr-2.1-2.11.jar with timestamp 1502548321316
+17/08/12 10:32:01 INFO Executor: Starting executor ID driver on host localhost
+17/08/12 10:32:01 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 45446.
+17/08/12 10:32:01 INFO NettyBlockTransferService: Server created on 127.0.0.1:45446
+17/08/12 10:32:01 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+17/08/12 10:32:01 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 127.0.0.1, 45446, None)
+17/08/12 10:32:01 INFO BlockManagerMasterEndpoint: Registering block manager 127.0.0.1:45446 with 366.3 MB RAM, BlockManagerId(driver, 127.0.0.1, 45446, None)
+17/08/12 10:32:01 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 127.0.0.1, 45446, None)
+17/08/12 10:32:01 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 127.0.0.1, 45446, None)
+17/08/12 10:32:02 WARN SparkContext: Using an existing SparkContext; some configuration may not take effect.
+17/08/12 10:32:02 INFO SharedState: Warehouse path is 'file:/home/rstudio/R/Projetos/Indulto/SP/spark-warehouse'.
+17/08/12 10:32:02 INFO HiveUtils: Initializing HiveMetastoreConnection version 1.2.1 using Spark classes.
+17/08/12 10:32:03 INFO HiveMetaStore: 0: Opening raw store with implemenation class:org.apache.hadoop.hive.metastore.ObjectStore
+17/08/12 10:32:03 INFO ObjectStore: ObjectStore, initialize called
+17/08/12 10:32:03 INFO Persistence: Property hive.metastore.integral.jdo.pushdown unknown - will be ignored
+17/08/12 10:32:03 INFO Persistence: Property datanucleus.cache.level2 unknown - will be ignored
+17/08/12 10:32:04 INFO ObjectStore: Setting MetaStore object pin classes with hive.metastore.cache.pinobjtypes="Table,StorageDescriptor,SerDeInfo,Partition,Database,Type,FieldSchema,Order"
+17/08/12 10:32:05 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MFieldSchema" is tagged as "embedded-only" so does not have its own datastore table.
+17/08/12 10:32:05 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MOrder" is tagged as "embedded-only" so does not have its own datastore table.
+17/08/12 10:32:06 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MFieldSchema" is tagged as "embedded-only" so does not have its own datastore table.
+17/08/12 10:32:06 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MOrder" is tagged as "embedded-only" so does not have its own datastore table.
+17/08/12 10:32:06 INFO MetaStoreDirectSql: Using direct SQL, underlying DB is DERBY
+17/08/12 10:32:06 INFO ObjectStore: Initialized ObjectStore
+17/08/12 10:32:06 WARN ObjectStore: Version information not found in metastore. hive.metastore.schema.verification is not enabled so recording the schema version 1.2.0
+17/08/12 10:32:06 WARN ObjectStore: Failed to get database default, returning NoSuchObjectException
+17/08/12 10:32:06 INFO HiveMetaStore: Added admin role in metastore
+17/08/12 10:32:06 INFO HiveMetaStore: Added public role in metastore
+17/08/12 10:32:07 INFO HiveMetaStore: No user is added in admin role, since config is empty
+17/08/12 10:32:07 INFO HiveMetaStore: 0: get_all_databases
+17/08/12 10:32:07 INFO audit: ugi=rstudio	ip=unknown-ip-addr	cmd=get_all_databases	
+17/08/12 10:32:07 INFO HiveMetaStore: 0: get_functions: db=default pat=*
+17/08/12 10:32:07 INFO audit: ugi=rstudio	ip=unknown-ip-addr	cmd=get_functions: db=default pat=*	
+17/08/12 10:32:07 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MResourceUri" is tagged as "embedded-only" so does not have its own datastore table.
+17/08/12 10:32:07 INFO SessionState: Created local directory: /tmp/469c0efb-c27d-4b04-96d0-5aa5392c956d_resources
+17/08/12 10:32:07 INFO SessionState: Created HDFS directory: /tmp/hive/rstudio/469c0efb-c27d-4b04-96d0-5aa5392c956d
+17/08/12 10:32:07 INFO SessionState: Created local directory: /tmp/rstudio/469c0efb-c27d-4b04-96d0-5aa5392c956d
+17/08/12 10:32:07 INFO SessionState: Created HDFS directory: /tmp/hive/rstudio/469c0efb-c27d-4b04-96d0-5aa5392c956d/_tmp_space.db
+17/08/12 10:32:07 INFO HiveClientImpl: Warehouse location for Hive client (version 1.2.1) is file:/home/rstudio/R/Projetos/Indulto/SP/spark-warehouse
+17/08/12 10:32:07 INFO HiveMetaStore: 0: get_database: default
+17/08/12 10:32:07 INFO audit: ugi=rstudio	ip=unknown-ip-addr	cmd=get_database: default	
+17/08/12 10:32:07 INFO HiveMetaStore: 0: get_database: global_temp
+17/08/12 10:32:07 INFO audit: ugi=rstudio	ip=unknown-ip-addr	cmd=get_database: global_temp	
+17/08/12 10:32:07 WARN ObjectStore: Failed to get database global_temp, returning NoSuchObjectException
+17/08/12 10:32:07 INFO SparkSqlParser: Parsing command: SHOW TABLES
+17/08/12 10:32:09 INFO HiveMetaStore: 0: get_database: default
+17/08/12 10:32:09 INFO audit: ugi=rstudio	ip=unknown-ip-addr	cmd=get_database: default	
+17/08/12 10:32:09 INFO HiveMetaStore: 0: get_database: default
+17/08/12 10:32:09 INFO audit: ugi=rstudio	ip=unknown-ip-addr	cmd=get_database: default	
+17/08/12 10:32:09 INFO HiveMetaStore: 0: get_tables: db=default pat=*
+17/08/12 10:32:09 INFO audit: ugi=rstudio	ip=unknown-ip-addr	cmd=get_tables: db=default pat=*	
+17/08/12 10:32:09 WARN SparkSession$Builder: Using an existing SparkSession; some configuration may not take effect.
+17/08/12 10:32:09 INFO SparkSqlParser: Parsing command: SHOW TABLES
+17/08/12 10:32:09 INFO HiveMetaStore: 0: get_database: default
+17/08/12 10:32:09 INFO audit: ugi=rstudio	ip=unknown-ip-addr	cmd=get_database: default	
+17/08/12 10:32:09 INFO HiveMetaStore: 0: get_database: default
+17/08/12 10:32:09 INFO audit: ugi=rstudio	ip=unknown-ip-addr	cmd=get_database: default	
+17/08/12 10:32:09 INFO HiveMetaStore: 0: get_tables: db=default pat=*
+17/08/12 10:32:09 INFO audit: ugi=rstudio	ip=unknown-ip-addr	cmd=get_tables: db=default pat=*	
+17/08/12 10:32:16 WARN SparkSession$Builder: Using an existing SparkSession; some configuration may not take effect.
+17/08/12 10:32:16 INFO SparkSqlParser: Parsing command: SHOW TABLES
+17/08/12 10:32:16 INFO HiveMetaStore: 0: get_database: default
+17/08/12 10:32:16 INFO audit: ugi=rstudio	ip=unknown-ip-addr	cmd=get_database: default	
+17/08/12 10:32:16 INFO HiveMetaStore: 0: get_database: default
+17/08/12 10:32:16 INFO audit: ugi=rstudio	ip=unknown-ip-addr	cmd=get_database: default	
+17/08/12 10:32:16 INFO HiveMetaStore: 0: get_tables: db=default pat=*
+17/08/12 10:32:16 INFO audit: ugi=rstudio	ip=unknown-ip-addr	cmd=get_tables: db=default pat=*	
+17/08/12 10:32:17 INFO CodeGenerator: Code generated in 267.569279 ms
+17/08/12 10:32:17 INFO SparkContext: Starting job: collect at utils.scala:58
+17/08/12 10:32:17 INFO DAGScheduler: Got job 0 (collect at utils.scala:58) with 1 output partitions
+17/08/12 10:32:17 INFO DAGScheduler: Final stage: ResultStage 0 (collect at utils.scala:58)
+17/08/12 10:32:17 INFO DAGScheduler: Parents of final stage: List()
+17/08/12 10:32:17 INFO DAGScheduler: Missing parents: List()
+17/08/12 10:32:17 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[7] at map at utils.scala:55), which has no missing parents
+17/08/12 10:32:17 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 8.7 KB, free 366.3 MB)
+17/08/12 10:32:17 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 4.6 KB, free 366.3 MB)
+17/08/12 10:32:17 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 127.0.0.1:45446 (size: 4.6 KB, free: 366.3 MB)
+17/08/12 10:32:17 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:996
+17/08/12 10:32:17 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 0 (MapPartitionsRDD[7] at map at utils.scala:55)
+17/08/12 10:32:17 INFO TaskSchedulerImpl: Adding task set 0.0 with 1 tasks
+17/08/12 10:32:17 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0, localhost, executor driver, partition 0, PROCESS_LOCAL, 6042 bytes)
+17/08/12 10:32:17 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+17/08/12 10:32:17 INFO Executor: Fetching spark://127.0.0.1:41598/jars/sparklyr-2.1-2.11.jar with timestamp 1502548321316
+17/08/12 10:32:17 INFO TransportClientFactory: Successfully created connection to /127.0.0.1:41598 after 15 ms (0 ms spent in bootstraps)
+17/08/12 10:32:17 INFO Utils: Fetching spark://127.0.0.1:41598/jars/sparklyr-2.1-2.11.jar to /tmp/spark-19de1043-1478-488b-9991-c905c006af2a/userFiles-1f853c6c-a29e-4977-a305-30321757eb20/fetchFileTemp4647714937686754317.tmp
+17/08/12 10:32:17 INFO Executor: Adding file:/tmp/spark-19de1043-1478-488b-9991-c905c006af2a/userFiles-1f853c6c-a29e-4977-a305-30321757eb20/sparklyr-2.1-2.11.jar to class loader
+17/08/12 10:32:17 INFO CodeGenerator: Code generated in 13.435173 ms
+17/08/12 10:32:17 INFO CodeGenerator: Code generated in 12.646036 ms
+17/08/12 10:32:17 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 1318 bytes result sent to driver
+17/08/12 10:32:17 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 254 ms on localhost (executor driver) (1/1)
+17/08/12 10:32:17 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+17/08/12 10:32:17 INFO DAGScheduler: ResultStage 0 (collect at utils.scala:58) finished in 0,277 s
+17/08/12 10:32:17 INFO DAGScheduler: Job 0 finished: collect at utils.scala:58, took 0,443704 s
+17/08/12 10:32:18 WARN SparkSession$Builder: Using an existing SparkSession; some configuration may not take effect.
+17/08/12 10:32:18 INFO SparkSqlParser: Parsing command: df
+17/08/12 10:32:18 WARN SparkSession$Builder: Using an existing SparkSession; some configuration may not take effect.
+17/08/12 10:32:18 INFO SparkSqlParser: Parsing command: CACHE TABLE `df`
+17/08/12 10:32:18 INFO SparkSqlParser: Parsing command: `df`
+17/08/12 10:32:18 INFO FileSourceStrategy: Pruning directories with: 
+17/08/12 10:32:18 INFO FileSourceStrategy: Post-Scan Filters: 
+17/08/12 10:32:18 INFO FileSourceStrategy: Output Data Schema: struct<cdacordao: double, decreto: string, relator: string, comarca: string, orgao_julgador: string ... 16 more fields>
+17/08/12 10:32:18 INFO FileSourceStrategy: Pushed Filters: 
+17/08/12 10:32:18 INFO CodeGenerator: Code generated in 8.814216 ms
+17/08/12 10:32:18 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 290.9 KB, free 366.0 MB)
+17/08/12 10:32:18 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 23.8 KB, free 366.0 MB)
+17/08/12 10:32:18 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on 127.0.0.1:45446 (size: 23.8 KB, free: 366.3 MB)
+17/08/12 10:32:18 INFO SparkContext: Created broadcast 1 from sql at NativeMethodAccessorImpl.java:0
+17/08/12 10:32:18 INFO FileSourceScanExec: Planning scan with bin packing, max size: 6140470 bytes, open cost is considered as scanning 4194304 bytes.
+17/08/12 10:32:18 INFO CodeGenerator: Code generated in 15.389765 ms
+17/08/12 10:32:18 INFO CodeGenerator: Code generated in 10.738313 ms
+17/08/12 10:32:18 INFO SparkContext: Starting job: sql at NativeMethodAccessorImpl.java:0
+17/08/12 10:32:18 INFO DAGScheduler: Registering RDD 14 (sql at NativeMethodAccessorImpl.java:0)
+17/08/12 10:32:18 INFO DAGScheduler: Got job 1 (sql at NativeMethodAccessorImpl.java:0) with 1 output partitions
+17/08/12 10:32:18 INFO DAGScheduler: Final stage: ResultStage 2 (sql at NativeMethodAccessorImpl.java:0)
+17/08/12 10:32:18 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 1)
+17/08/12 10:32:18 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 1)
+17/08/12 10:32:18 INFO DAGScheduler: Submitting ShuffleMapStage 1 (MapPartitionsRDD[14] at sql at NativeMethodAccessorImpl.java:0), which has no missing parents
+17/08/12 10:32:19 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 28.0 KB, free 366.0 MB)
+17/08/12 10:32:19 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 12.4 KB, free 365.9 MB)
+17/08/12 10:32:19 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on 127.0.0.1:45446 (size: 12.4 KB, free: 366.3 MB)
+17/08/12 10:32:19 INFO SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:996
+17/08/12 10:32:19 INFO DAGScheduler: Submitting 3 missing tasks from ShuffleMapStage 1 (MapPartitionsRDD[14] at sql at NativeMethodAccessorImpl.java:0)
+17/08/12 10:32:19 INFO TaskSchedulerImpl: Adding task set 1.0 with 3 tasks
+17/08/12 10:32:19 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 1, localhost, executor driver, partition 0, PROCESS_LOCAL, 6646 bytes)
+17/08/12 10:32:19 INFO TaskSetManager: Starting task 1.0 in stage 1.0 (TID 2, localhost, executor driver, partition 1, PROCESS_LOCAL, 6646 bytes)
+17/08/12 10:32:19 INFO TaskSetManager: Starting task 2.0 in stage 1.0 (TID 3, localhost, executor driver, partition 2, PROCESS_LOCAL, 6646 bytes)
+17/08/12 10:32:19 INFO Executor: Running task 0.0 in stage 1.0 (TID 1)
+17/08/12 10:32:19 INFO Executor: Running task 1.0 in stage 1.0 (TID 2)
+17/08/12 10:32:19 INFO Executor: Running task 2.0 in stage 1.0 (TID 3)
+17/08/12 10:32:19 INFO FileScanRDD: Reading File path: file:///tmp/Rtmp4PXkrb/spark_serialize_9a8a787a542a6526f7b8b63dcb8274bc5f4f7147d18bea7e0ea2e49b43a2635c.csv, range: 6140470-12280940, partition values: [empty row]
+17/08/12 10:32:19 INFO FileScanRDD: Reading File path: file:///tmp/Rtmp4PXkrb/spark_serialize_9a8a787a542a6526f7b8b63dcb8274bc5f4f7147d18bea7e0ea2e49b43a2635c.csv, range: 0-6140470, partition values: [empty row]
+17/08/12 10:32:19 INFO FileScanRDD: Reading File path: file:///tmp/Rtmp4PXkrb/spark_serialize_9a8a787a542a6526f7b8b63dcb8274bc5f4f7147d18bea7e0ea2e49b43a2635c.csv, range: 12280940-14227108, partition values: [empty row]
+17/08/12 10:32:19 INFO CodeGenerator: Code generated in 25.821579 ms
+17/08/12 10:32:19 WARN BlockManager: Putting block rdd_11_0 failed due to an exception
+17/08/12 10:32:19 WARN BlockManager: Block rdd_11_0 could not be removed as it was not found on disk or in memory
+17/08/12 10:32:19 WARN BlockManager: Putting block rdd_11_2 failed due to an exception
+17/08/12 10:32:19 WARN BlockManager: Block rdd_11_2 could not be removed as it was not found on disk or in memory
+17/08/12 10:32:19 WARN BlockManager: Putting block rdd_11_1 failed due to an exception
+17/08/12 10:32:19 WARN BlockManager: Block rdd_11_1 could not be removed as it was not found on disk or in memory
+17/08/12 10:32:19 ERROR Executor: Exception in task 0.0 in stage 1.0 (TID 1)
+java.text.ParseException: Unparseable number: "Jaime Ferreira Menino; Comarca: Franco da Rocha; Órgão julgador: 16ª Câmara de Direito Criminal; Data do julgamento: 22/11/2016; Data de registro: 24/11/2016)""
+	at java.text.NumberFormat.parse(NumberFormat.java:385)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$$anonfun$castTo$4.apply$mcD$sp(CSVInferSchema.scala:268)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$$anonfun$castTo$4.apply(CSVInferSchema.scala:268)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$$anonfun$castTo$4.apply(CSVInferSchema.scala:268)
+	at scala.util.Try.getOrElse(Try.scala:79)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$.castTo(CSVInferSchema.scala:268)
+	at org.apache.spark.sql.execution.datasources.csv.CSVRelation$$anonfun$csvParser$3.apply(CSVRelation.scala:125)
+	at org.apache.spark.sql.execution.datasources.csv.CSVRelation$$anonfun$csvParser$3.apply(CSVRelation.scala:94)
+	at org.apache.spark.sql.execution.datasources.csv.CSVFileFormat$$anonfun$buildReader$1$$anonfun$apply$2.apply(CSVFileFormat.scala:167)
+	at org.apache.spark.sql.execution.datasources.csv.CSVFileFormat$$anonfun$buildReader$1$$anonfun$apply$2.apply(CSVFileFormat.scala:166)
+	at scala.collection.Iterator$$anon$12.nextCur(Iterator.scala:434)
+	at scala.collection.Iterator$$anon$12.hasNext(Iterator.scala:440)
+	at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:408)
+	at org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.hasNext(FileScanRDD.scala:102)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIterator.processNext(Unknown Source)
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+	at org.apache.spark.sql.execution.WholeStageCodegenExec$$anonfun$8$$anon$1.hasNext(WholeStageCodegenExec.scala:377)
+	at org.apache.spark.sql.execution.columnar.InMemoryRelation$$anonfun$1$$anon$1.next(InMemoryRelation.scala:105)
+	at org.apache.spark.sql.execution.columnar.InMemoryRelation$$anonfun$1$$anon$1.next(InMemoryRelation.scala:97)
+	at org.apache.spark.storage.memory.MemoryStore.putIteratorAsValues(MemoryStore.scala:216)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:957)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:948)
+	at org.apache.spark.storage.BlockManager.doPut(BlockManager.scala:888)
+	at org.apache.spark.storage.BlockManager.doPutIterator(BlockManager.scala:948)
+	at org.apache.spark.storage.BlockManager.getOrElseUpdate(BlockManager.scala:694)
+	at org.apache.spark.rdd.RDD.getOrCompute(RDD.scala:334)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:285)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:38)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:38)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:38)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:96)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:53)
+	at org.apache.spark.scheduler.Task.run(Task.scala:99)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:282)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+17/08/12 10:32:19 ERROR Executor: Exception in task 1.0 in stage 1.0 (TID 2)
+java.text.ParseException: Unparseable number: "Rachid Vaz de Almeida; Comarca: São Paulo; Órgão julgador: 10ª Câmara de Direito Criminal; Data do julgamento: 06/12/2012; Data de registro: 13/12/2012)""
+	at java.text.NumberFormat.parse(NumberFormat.java:385)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$$anonfun$castTo$4.apply$mcD$sp(CSVInferSchema.scala:268)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$$anonfun$castTo$4.apply(CSVInferSchema.scala:268)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$$anonfun$castTo$4.apply(CSVInferSchema.scala:268)
+	at scala.util.Try.getOrElse(Try.scala:79)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$.castTo(CSVInferSchema.scala:268)
+	at org.apache.spark.sql.execution.datasources.csv.CSVRelation$$anonfun$csvParser$3.apply(CSVRelation.scala:125)
+	at org.apache.spark.sql.execution.datasources.csv.CSVRelation$$anonfun$csvParser$3.apply(CSVRelation.scala:94)
+	at org.apache.spark.sql.execution.datasources.csv.CSVFileFormat$$anonfun$buildReader$1$$anonfun$apply$2.apply(CSVFileFormat.scala:167)
+	at org.apache.spark.sql.execution.datasources.csv.CSVFileFormat$$anonfun$buildReader$1$$anonfun$apply$2.apply(CSVFileFormat.scala:166)
+	at scala.collection.Iterator$$anon$12.nextCur(Iterator.scala:434)
+	at scala.collection.Iterator$$anon$12.hasNext(Iterator.scala:440)
+	at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:408)
+	at org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.hasNext(FileScanRDD.scala:102)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIterator.processNext(Unknown Source)
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+	at org.apache.spark.sql.execution.WholeStageCodegenExec$$anonfun$8$$anon$1.hasNext(WholeStageCodegenExec.scala:377)
+	at org.apache.spark.sql.execution.columnar.InMemoryRelation$$anonfun$1$$anon$1.next(InMemoryRelation.scala:105)
+	at org.apache.spark.sql.execution.columnar.InMemoryRelation$$anonfun$1$$anon$1.next(InMemoryRelation.scala:97)
+	at org.apache.spark.storage.memory.MemoryStore.putIteratorAsValues(MemoryStore.scala:216)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:957)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:948)
+	at org.apache.spark.storage.BlockManager.doPut(BlockManager.scala:888)
+	at org.apache.spark.storage.BlockManager.doPutIterator(BlockManager.scala:948)
+	at org.apache.spark.storage.BlockManager.getOrElseUpdate(BlockManager.scala:694)
+	at org.apache.spark.rdd.RDD.getOrCompute(RDD.scala:334)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:285)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:38)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:38)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:38)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:96)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:53)
+	at org.apache.spark.scheduler.Task.run(Task.scala:99)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:282)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+17/08/12 10:32:19 ERROR Executor: Exception in task 2.0 in stage 1.0 (TID 3)
+java.text.ParseException: Unparseable number: "RECURSO DESPROVIDO. "
+	at java.text.NumberFormat.parse(NumberFormat.java:385)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$$anonfun$castTo$4.apply$mcD$sp(CSVInferSchema.scala:268)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$$anonfun$castTo$4.apply(CSVInferSchema.scala:268)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$$anonfun$castTo$4.apply(CSVInferSchema.scala:268)
+	at scala.util.Try.getOrElse(Try.scala:79)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$.castTo(CSVInferSchema.scala:268)
+	at org.apache.spark.sql.execution.datasources.csv.CSVRelation$$anonfun$csvParser$3.apply(CSVRelation.scala:125)
+	at org.apache.spark.sql.execution.datasources.csv.CSVRelation$$anonfun$csvParser$3.apply(CSVRelation.scala:94)
+	at org.apache.spark.sql.execution.datasources.csv.CSVFileFormat$$anonfun$buildReader$1$$anonfun$apply$2.apply(CSVFileFormat.scala:167)
+	at org.apache.spark.sql.execution.datasources.csv.CSVFileFormat$$anonfun$buildReader$1$$anonfun$apply$2.apply(CSVFileFormat.scala:166)
+	at scala.collection.Iterator$$anon$12.nextCur(Iterator.scala:434)
+	at scala.collection.Iterator$$anon$12.hasNext(Iterator.scala:440)
+	at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:408)
+	at org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.hasNext(FileScanRDD.scala:102)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIterator.processNext(Unknown Source)
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+	at org.apache.spark.sql.execution.WholeStageCodegenExec$$anonfun$8$$anon$1.hasNext(WholeStageCodegenExec.scala:377)
+	at org.apache.spark.sql.execution.columnar.InMemoryRelation$$anonfun$1$$anon$1.next(InMemoryRelation.scala:105)
+	at org.apache.spark.sql.execution.columnar.InMemoryRelation$$anonfun$1$$anon$1.next(InMemoryRelation.scala:97)
+	at org.apache.spark.storage.memory.MemoryStore.putIteratorAsValues(MemoryStore.scala:216)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:957)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:948)
+	at org.apache.spark.storage.BlockManager.doPut(BlockManager.scala:888)
+	at org.apache.spark.storage.BlockManager.doPutIterator(BlockManager.scala:948)
+	at org.apache.spark.storage.BlockManager.getOrElseUpdate(BlockManager.scala:694)
+	at org.apache.spark.rdd.RDD.getOrCompute(RDD.scala:334)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:285)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:38)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:38)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:38)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:96)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:53)
+	at org.apache.spark.scheduler.Task.run(Task.scala:99)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:282)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+17/08/12 10:32:19 WARN TaskSetManager: Lost task 0.0 in stage 1.0 (TID 1, localhost, executor driver): java.text.ParseException: Unparseable number: "Jaime Ferreira Menino; Comarca: Franco da Rocha; Órgão julgador: 16ª Câmara de Direito Criminal; Data do julgamento: 22/11/2016; Data de registro: 24/11/2016)""
+	at java.text.NumberFormat.parse(NumberFormat.java:385)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$$anonfun$castTo$4.apply$mcD$sp(CSVInferSchema.scala:268)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$$anonfun$castTo$4.apply(CSVInferSchema.scala:268)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$$anonfun$castTo$4.apply(CSVInferSchema.scala:268)
+	at scala.util.Try.getOrElse(Try.scala:79)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$.castTo(CSVInferSchema.scala:268)
+	at org.apache.spark.sql.execution.datasources.csv.CSVRelation$$anonfun$csvParser$3.apply(CSVRelation.scala:125)
+	at org.apache.spark.sql.execution.datasources.csv.CSVRelation$$anonfun$csvParser$3.apply(CSVRelation.scala:94)
+	at org.apache.spark.sql.execution.datasources.csv.CSVFileFormat$$anonfun$buildReader$1$$anonfun$apply$2.apply(CSVFileFormat.scala:167)
+	at org.apache.spark.sql.execution.datasources.csv.CSVFileFormat$$anonfun$buildReader$1$$anonfun$apply$2.apply(CSVFileFormat.scala:166)
+	at scala.collection.Iterator$$anon$12.nextCur(Iterator.scala:434)
+	at scala.collection.Iterator$$anon$12.hasNext(Iterator.scala:440)
+	at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:408)
+	at org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.hasNext(FileScanRDD.scala:102)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIterator.processNext(Unknown Source)
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+	at org.apache.spark.sql.execution.WholeStageCodegenExec$$anonfun$8$$anon$1.hasNext(WholeStageCodegenExec.scala:377)
+	at org.apache.spark.sql.execution.columnar.InMemoryRelation$$anonfun$1$$anon$1.next(InMemoryRelation.scala:105)
+	at org.apache.spark.sql.execution.columnar.InMemoryRelation$$anonfun$1$$anon$1.next(InMemoryRelation.scala:97)
+	at org.apache.spark.storage.memory.MemoryStore.putIteratorAsValues(MemoryStore.scala:216)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:957)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:948)
+	at org.apache.spark.storage.BlockManager.doPut(BlockManager.scala:888)
+	at org.apache.spark.storage.BlockManager.doPutIterator(BlockManager.scala:948)
+	at org.apache.spark.storage.BlockManager.getOrElseUpdate(BlockManager.scala:694)
+	at org.apache.spark.rdd.RDD.getOrCompute(RDD.scala:334)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:285)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:38)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:38)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:38)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:96)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:53)
+	at org.apache.spark.scheduler.Task.run(Task.scala:99)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:282)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+17/08/12 10:32:19 ERROR TaskSetManager: Task 0 in stage 1.0 failed 1 times; aborting job
+17/08/12 10:32:19 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool 
+17/08/12 10:32:19 WARN TaskSetManager: Lost task 2.0 in stage 1.0 (TID 3, localhost, executor driver): java.text.ParseException: Unparseable number: "RECURSO DESPROVIDO. "
+	at java.text.NumberFormat.parse(NumberFormat.java:385)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$$anonfun$castTo$4.apply$mcD$sp(CSVInferSchema.scala:268)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$$anonfun$castTo$4.apply(CSVInferSchema.scala:268)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$$anonfun$castTo$4.apply(CSVInferSchema.scala:268)
+	at scala.util.Try.getOrElse(Try.scala:79)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$.castTo(CSVInferSchema.scala:268)
+	at org.apache.spark.sql.execution.datasources.csv.CSVRelation$$anonfun$csvParser$3.apply(CSVRelation.scala:125)
+	at org.apache.spark.sql.execution.datasources.csv.CSVRelation$$anonfun$csvParser$3.apply(CSVRelation.scala:94)
+	at org.apache.spark.sql.execution.datasources.csv.CSVFileFormat$$anonfun$buildReader$1$$anonfun$apply$2.apply(CSVFileFormat.scala:167)
+	at org.apache.spark.sql.execution.datasources.csv.CSVFileFormat$$anonfun$buildReader$1$$anonfun$apply$2.apply(CSVFileFormat.scala:166)
+	at scala.collection.Iterator$$anon$12.nextCur(Iterator.scala:434)
+	at scala.collection.Iterator$$anon$12.hasNext(Iterator.scala:440)
+	at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:408)
+	at org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.hasNext(FileScanRDD.scala:102)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIterator.processNext(Unknown Source)
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+	at org.apache.spark.sql.execution.WholeStageCodegenExec$$anonfun$8$$anon$1.hasNext(WholeStageCodegenExec.scala:377)
+	at org.apache.spark.sql.execution.columnar.InMemoryRelation$$anonfun$1$$anon$1.next(InMemoryRelation.scala:105)
+	at org.apache.spark.sql.execution.columnar.InMemoryRelation$$anonfun$1$$anon$1.next(InMemoryRelation.scala:97)
+	at org.apache.spark.storage.memory.MemoryStore.putIteratorAsValues(MemoryStore.scala:216)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:957)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:948)
+	at org.apache.spark.storage.BlockManager.doPut(BlockManager.scala:888)
+	at org.apache.spark.storage.BlockManager.doPutIterator(BlockManager.scala:948)
+	at org.apache.spark.storage.BlockManager.getOrElseUpdate(BlockManager.scala:694)
+	at org.apache.spark.rdd.RDD.getOrCompute(RDD.scala:334)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:285)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:38)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:38)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:38)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:96)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:53)
+	at org.apache.spark.scheduler.Task.run(Task.scala:99)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:282)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+17/08/12 10:32:19 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool 
+17/08/12 10:32:19 WARN TaskSetManager: Lost task 1.0 in stage 1.0 (TID 2, localhost, executor driver): java.text.ParseException: Unparseable number: "Rachid Vaz de Almeida; Comarca: São Paulo; Órgão julgador: 10ª Câmara de Direito Criminal; Data do julgamento: 06/12/2012; Data de registro: 13/12/2012)""
+	at java.text.NumberFormat.parse(NumberFormat.java:385)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$$anonfun$castTo$4.apply$mcD$sp(CSVInferSchema.scala:268)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$$anonfun$castTo$4.apply(CSVInferSchema.scala:268)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$$anonfun$castTo$4.apply(CSVInferSchema.scala:268)
+	at scala.util.Try.getOrElse(Try.scala:79)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$.castTo(CSVInferSchema.scala:268)
+	at org.apache.spark.sql.execution.datasources.csv.CSVRelation$$anonfun$csvParser$3.apply(CSVRelation.scala:125)
+	at org.apache.spark.sql.execution.datasources.csv.CSVRelation$$anonfun$csvParser$3.apply(CSVRelation.scala:94)
+	at org.apache.spark.sql.execution.datasources.csv.CSVFileFormat$$anonfun$buildReader$1$$anonfun$apply$2.apply(CSVFileFormat.scala:167)
+	at org.apache.spark.sql.execution.datasources.csv.CSVFileFormat$$anonfun$buildReader$1$$anonfun$apply$2.apply(CSVFileFormat.scala:166)
+	at scala.collection.Iterator$$anon$12.nextCur(Iterator.scala:434)
+	at scala.collection.Iterator$$anon$12.hasNext(Iterator.scala:440)
+	at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:408)
+	at org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.hasNext(FileScanRDD.scala:102)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIterator.processNext(Unknown Source)
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+	at org.apache.spark.sql.execution.WholeStageCodegenExec$$anonfun$8$$anon$1.hasNext(WholeStageCodegenExec.scala:377)
+	at org.apache.spark.sql.execution.columnar.InMemoryRelation$$anonfun$1$$anon$1.next(InMemoryRelation.scala:105)
+	at org.apache.spark.sql.execution.columnar.InMemoryRelation$$anonfun$1$$anon$1.next(InMemoryRelation.scala:97)
+	at org.apache.spark.storage.memory.MemoryStore.putIteratorAsValues(MemoryStore.scala:216)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:957)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:948)
+	at org.apache.spark.storage.BlockManager.doPut(BlockManager.scala:888)
+	at org.apache.spark.storage.BlockManager.doPutIterator(BlockManager.scala:948)
+	at org.apache.spark.storage.BlockManager.getOrElseUpdate(BlockManager.scala:694)
+	at org.apache.spark.rdd.RDD.getOrCompute(RDD.scala:334)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:285)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:38)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:38)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:38)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:96)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:53)
+	at org.apache.spark.scheduler.Task.run(Task.scala:99)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:282)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+17/08/12 10:32:19 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool 
+17/08/12 10:32:19 INFO TaskSchedulerImpl: Cancelling stage 1
+17/08/12 10:32:19 INFO DAGScheduler: ShuffleMapStage 1 (sql at NativeMethodAccessorImpl.java:0) failed in 0,282 s due to Job aborted due to stage failure: Task 0 in stage 1.0 failed 1 times, most recent failure: Lost task 0.0 in stage 1.0 (TID 1, localhost, executor driver): java.text.ParseException: Unparseable number: "Jaime Ferreira Menino; Comarca: Franco da Rocha; Órgão julgador: 16ª Câmara de Direito Criminal; Data do julgamento: 22/11/2016; Data de registro: 24/11/2016)""
+	at java.text.NumberFormat.parse(NumberFormat.java:385)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$$anonfun$castTo$4.apply$mcD$sp(CSVInferSchema.scala:268)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$$anonfun$castTo$4.apply(CSVInferSchema.scala:268)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$$anonfun$castTo$4.apply(CSVInferSchema.scala:268)
+	at scala.util.Try.getOrElse(Try.scala:79)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$.castTo(CSVInferSchema.scala:268)
+	at org.apache.spark.sql.execution.datasources.csv.CSVRelation$$anonfun$csvParser$3.apply(CSVRelation.scala:125)
+	at org.apache.spark.sql.execution.datasources.csv.CSVRelation$$anonfun$csvParser$3.apply(CSVRelation.scala:94)
+	at org.apache.spark.sql.execution.datasources.csv.CSVFileFormat$$anonfun$buildReader$1$$anonfun$apply$2.apply(CSVFileFormat.scala:167)
+	at org.apache.spark.sql.execution.datasources.csv.CSVFileFormat$$anonfun$buildReader$1$$anonfun$apply$2.apply(CSVFileFormat.scala:166)
+	at scala.collection.Iterator$$anon$12.nextCur(Iterator.scala:434)
+	at scala.collection.Iterator$$anon$12.hasNext(Iterator.scala:440)
+	at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:408)
+	at org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.hasNext(FileScanRDD.scala:102)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIterator.processNext(Unknown Source)
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+	at org.apache.spark.sql.execution.WholeStageCodegenExec$$anonfun$8$$anon$1.hasNext(WholeStageCodegenExec.scala:377)
+	at org.apache.spark.sql.execution.columnar.InMemoryRelation$$anonfun$1$$anon$1.next(InMemoryRelation.scala:105)
+	at org.apache.spark.sql.execution.columnar.InMemoryRelation$$anonfun$1$$anon$1.next(InMemoryRelation.scala:97)
+	at org.apache.spark.storage.memory.MemoryStore.putIteratorAsValues(MemoryStore.scala:216)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:957)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:948)
+	at org.apache.spark.storage.BlockManager.doPut(BlockManager.scala:888)
+	at org.apache.spark.storage.BlockManager.doPutIterator(BlockManager.scala:948)
+	at org.apache.spark.storage.BlockManager.getOrElseUpdate(BlockManager.scala:694)
+	at org.apache.spark.rdd.RDD.getOrCompute(RDD.scala:334)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:285)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:38)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:38)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:38)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:96)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:53)
+	at org.apache.spark.scheduler.Task.run(Task.scala:99)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:282)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+Driver stacktrace:
+17/08/12 10:32:19 INFO DAGScheduler: Job 1 failed: sql at NativeMethodAccessorImpl.java:0, took 0,331734 s
+17/08/12 10:32:50 WARN SparkSession$Builder: Using an existing SparkSession; some configuration may not take effect.
+17/08/12 10:32:50 INFO SparkSqlParser: Parsing command: SHOW TABLES
+17/08/12 10:32:50 INFO HiveMetaStore: 0: get_database: default
+17/08/12 10:32:50 INFO audit: ugi=rstudio	ip=unknown-ip-addr	cmd=get_database: default	
+17/08/12 10:32:50 INFO HiveMetaStore: 0: get_database: default
+17/08/12 10:32:50 INFO audit: ugi=rstudio	ip=unknown-ip-addr	cmd=get_database: default	
+17/08/12 10:32:50 INFO HiveMetaStore: 0: get_tables: db=default pat=*
+17/08/12 10:32:50 INFO audit: ugi=rstudio	ip=unknown-ip-addr	cmd=get_tables: db=default pat=*	
+17/08/12 10:32:50 INFO SparkContext: Starting job: collect at utils.scala:58
+17/08/12 10:32:50 INFO DAGScheduler: Got job 2 (collect at utils.scala:58) with 1 output partitions
+17/08/12 10:32:50 INFO DAGScheduler: Final stage: ResultStage 3 (collect at utils.scala:58)
+17/08/12 10:32:50 INFO DAGScheduler: Parents of final stage: List()
+17/08/12 10:32:50 INFO DAGScheduler: Missing parents: List()
+17/08/12 10:32:50 INFO DAGScheduler: Submitting ResultStage 3 (MapPartitionsRDD[23] at map at utils.scala:55), which has no missing parents
+17/08/12 10:32:50 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 8.7 KB, free 365.9 MB)
+17/08/12 10:32:50 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 4.6 KB, free 365.9 MB)
+17/08/12 10:32:50 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on 127.0.0.1:45446 (size: 4.6 KB, free: 366.3 MB)
+17/08/12 10:32:50 INFO SparkContext: Created broadcast 3 from broadcast at DAGScheduler.scala:996
+17/08/12 10:32:50 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 3 (MapPartitionsRDD[23] at map at utils.scala:55)
+17/08/12 10:32:50 INFO TaskSchedulerImpl: Adding task set 3.0 with 1 tasks
+17/08/12 10:32:50 INFO TaskSetManager: Starting task 0.0 in stage 3.0 (TID 4, localhost, executor driver, partition 0, PROCESS_LOCAL, 6351 bytes)
+17/08/12 10:32:50 INFO Executor: Running task 0.0 in stage 3.0 (TID 4)
+17/08/12 10:32:50 INFO Executor: Finished task 0.0 in stage 3.0 (TID 4). 1236 bytes result sent to driver
+17/08/12 10:32:50 INFO TaskSetManager: Finished task 0.0 in stage 3.0 (TID 4) in 9 ms on localhost (executor driver) (1/1)
+17/08/12 10:32:50 INFO TaskSchedulerImpl: Removed TaskSet 3.0, whose tasks have all completed, from pool 
+17/08/12 10:32:50 INFO DAGScheduler: ResultStage 3 (collect at utils.scala:58) finished in 0,011 s
+17/08/12 10:32:50 INFO DAGScheduler: Job 2 finished: collect at utils.scala:58, took 0,019832 s
+17/08/12 10:35:18 WARN SparkSession$Builder: Using an existing SparkSession; some configuration may not take effect.
+17/08/12 10:35:18 INFO SparkSqlParser: Parsing command: SHOW TABLES
+17/08/12 10:35:18 INFO HiveMetaStore: 0: get_database: default
+17/08/12 10:35:18 INFO audit: ugi=rstudio	ip=unknown-ip-addr	cmd=get_database: default	
+17/08/12 10:35:18 INFO HiveMetaStore: 0: get_database: default
+17/08/12 10:35:18 INFO audit: ugi=rstudio	ip=unknown-ip-addr	cmd=get_database: default	
+17/08/12 10:35:18 INFO HiveMetaStore: 0: get_tables: db=default pat=*
+17/08/12 10:35:18 INFO audit: ugi=rstudio	ip=unknown-ip-addr	cmd=get_tables: db=default pat=*	
+17/08/12 10:35:18 INFO SparkContext: Starting job: collect at utils.scala:58
+17/08/12 10:35:18 INFO DAGScheduler: Got job 3 (collect at utils.scala:58) with 1 output partitions
+17/08/12 10:35:18 INFO DAGScheduler: Final stage: ResultStage 4 (collect at utils.scala:58)
+17/08/12 10:35:18 INFO DAGScheduler: Parents of final stage: List()
+17/08/12 10:35:18 INFO DAGScheduler: Missing parents: List()
+17/08/12 10:35:18 INFO DAGScheduler: Submitting ResultStage 4 (MapPartitionsRDD[29] at map at utils.scala:55), which has no missing parents
+17/08/12 10:35:18 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 8.7 KB, free 365.9 MB)
+17/08/12 10:35:18 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 4.6 KB, free 365.9 MB)
+17/08/12 10:35:18 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on 127.0.0.1:45446 (size: 4.6 KB, free: 366.3 MB)
+17/08/12 10:35:18 INFO SparkContext: Created broadcast 4 from broadcast at DAGScheduler.scala:996
+17/08/12 10:35:18 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 4 (MapPartitionsRDD[29] at map at utils.scala:55)
+17/08/12 10:35:18 INFO TaskSchedulerImpl: Adding task set 4.0 with 1 tasks
+17/08/12 10:35:18 INFO TaskSetManager: Starting task 0.0 in stage 4.0 (TID 5, localhost, executor driver, partition 0, PROCESS_LOCAL, 6351 bytes)
+17/08/12 10:35:18 INFO Executor: Running task 0.0 in stage 4.0 (TID 5)
+17/08/12 10:35:18 INFO Executor: Finished task 0.0 in stage 4.0 (TID 5). 1236 bytes result sent to driver
+17/08/12 10:35:18 INFO TaskSetManager: Finished task 0.0 in stage 4.0 (TID 5) in 9 ms on localhost (executor driver) (1/1)
+17/08/12 10:35:18 INFO TaskSchedulerImpl: Removed TaskSet 4.0, whose tasks have all completed, from pool 
+17/08/12 10:35:18 INFO DAGScheduler: ResultStage 4 (collect at utils.scala:58) finished in 0,011 s
+17/08/12 10:35:18 INFO DAGScheduler: Job 3 finished: collect at utils.scala:58, took 0,017254 s
+17/08/12 10:35:18 WARN SparkSession$Builder: Using an existing SparkSession; some configuration may not take effect.
+17/08/12 10:35:18 INFO MapPartitionsRDD: Removing RDD 11 from persistence list
+17/08/12 10:35:18 INFO BlockManager: Removing RDD 11
+17/08/12 10:35:18 WARN SparkSession$Builder: Using an existing SparkSession; some configuration may not take effect.
+17/08/12 10:35:18 INFO SparkSqlParser: Parsing command: df
+17/08/12 10:35:18 WARN SparkSession$Builder: Using an existing SparkSession; some configuration may not take effect.
+17/08/12 10:35:18 INFO SparkSqlParser: Parsing command: CACHE TABLE `df`
+17/08/12 10:35:18 INFO SparkSqlParser: Parsing command: `df`
+17/08/12 10:35:18 INFO FileSourceStrategy: Pruning directories with: 
+17/08/12 10:35:18 INFO FileSourceStrategy: Post-Scan Filters: 
+17/08/12 10:35:18 INFO FileSourceStrategy: Output Data Schema: struct<cdacordao: double, decreto: string, relator: string, comarca: string, orgao_julgador: string ... 16 more fields>
+17/08/12 10:35:18 INFO FileSourceStrategy: Pushed Filters: 
+17/08/12 10:35:18 INFO MemoryStore: Block broadcast_5 stored as values in memory (estimated size 290.9 KB, free 365.6 MB)
+17/08/12 10:35:18 INFO MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 23.8 KB, free 365.6 MB)
+17/08/12 10:35:18 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on 127.0.0.1:45446 (size: 23.8 KB, free: 366.2 MB)
+17/08/12 10:35:18 INFO SparkContext: Created broadcast 5 from sql at NativeMethodAccessorImpl.java:0
+17/08/12 10:35:18 INFO FileSourceScanExec: Planning scan with bin packing, max size: 6140470 bytes, open cost is considered as scanning 4194304 bytes.
+17/08/12 10:35:18 INFO SparkContext: Starting job: sql at NativeMethodAccessorImpl.java:0
+17/08/12 10:35:18 INFO DAGScheduler: Registering RDD 36 (sql at NativeMethodAccessorImpl.java:0)
+17/08/12 10:35:18 INFO DAGScheduler: Got job 4 (sql at NativeMethodAccessorImpl.java:0) with 1 output partitions
+17/08/12 10:35:18 INFO DAGScheduler: Final stage: ResultStage 6 (sql at NativeMethodAccessorImpl.java:0)
+17/08/12 10:35:18 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 5)
+17/08/12 10:35:18 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 5)
+17/08/12 10:35:18 INFO DAGScheduler: Submitting ShuffleMapStage 5 (MapPartitionsRDD[36] at sql at NativeMethodAccessorImpl.java:0), which has no missing parents
+17/08/12 10:35:18 INFO MemoryStore: Block broadcast_6 stored as values in memory (estimated size 28.0 KB, free 365.6 MB)
+17/08/12 10:35:18 INFO MemoryStore: Block broadcast_6_piece0 stored as bytes in memory (estimated size 12.3 KB, free 365.6 MB)
+17/08/12 10:35:18 INFO BlockManagerInfo: Added broadcast_6_piece0 in memory on 127.0.0.1:45446 (size: 12.3 KB, free: 366.2 MB)
+17/08/12 10:35:18 INFO SparkContext: Created broadcast 6 from broadcast at DAGScheduler.scala:996
+17/08/12 10:35:18 INFO DAGScheduler: Submitting 3 missing tasks from ShuffleMapStage 5 (MapPartitionsRDD[36] at sql at NativeMethodAccessorImpl.java:0)
+17/08/12 10:35:18 INFO TaskSchedulerImpl: Adding task set 5.0 with 3 tasks
+17/08/12 10:35:18 INFO TaskSetManager: Starting task 0.0 in stage 5.0 (TID 6, localhost, executor driver, partition 0, PROCESS_LOCAL, 6646 bytes)
+17/08/12 10:35:18 INFO TaskSetManager: Starting task 1.0 in stage 5.0 (TID 7, localhost, executor driver, partition 1, PROCESS_LOCAL, 6646 bytes)
+17/08/12 10:35:18 INFO TaskSetManager: Starting task 2.0 in stage 5.0 (TID 8, localhost, executor driver, partition 2, PROCESS_LOCAL, 6646 bytes)
+17/08/12 10:35:18 INFO Executor: Running task 0.0 in stage 5.0 (TID 6)
+17/08/12 10:35:18 INFO Executor: Running task 1.0 in stage 5.0 (TID 7)
+17/08/12 10:35:18 INFO Executor: Running task 2.0 in stage 5.0 (TID 8)
+17/08/12 10:35:18 INFO FileScanRDD: Reading File path: file:///tmp/Rtmp4PXkrb/spark_serialize_9a8a787a542a6526f7b8b63dcb8274bc5f4f7147d18bea7e0ea2e49b43a2635c.csv, range: 0-6140470, partition values: [empty row]
+17/08/12 10:35:18 INFO FileScanRDD: Reading File path: file:///tmp/Rtmp4PXkrb/spark_serialize_9a8a787a542a6526f7b8b63dcb8274bc5f4f7147d18bea7e0ea2e49b43a2635c.csv, range: 6140470-12280940, partition values: [empty row]
+17/08/12 10:35:18 WARN BlockManager: Putting block rdd_33_0 failed due to an exception
+17/08/12 10:35:18 WARN BlockManager: Block rdd_33_0 could not be removed as it was not found on disk or in memory
+17/08/12 10:35:18 WARN BlockManager: Putting block rdd_33_1 failed due to an exception
+17/08/12 10:35:18 WARN BlockManager: Block rdd_33_1 could not be removed as it was not found on disk or in memory
+17/08/12 10:35:18 ERROR Executor: Exception in task 0.0 in stage 5.0 (TID 6)
+java.text.ParseException: Unparseable number: "Jaime Ferreira Menino; Comarca: Franco da Rocha; Órgão julgador: 16ª Câmara de Direito Criminal; Data do julgamento: 22/11/2016; Data de registro: 24/11/2016)""
+	at java.text.NumberFormat.parse(NumberFormat.java:385)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$$anonfun$castTo$4.apply$mcD$sp(CSVInferSchema.scala:268)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$$anonfun$castTo$4.apply(CSVInferSchema.scala:268)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$$anonfun$castTo$4.apply(CSVInferSchema.scala:268)
+	at scala.util.Try.getOrElse(Try.scala:79)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$.castTo(CSVInferSchema.scala:268)
+	at org.apache.spark.sql.execution.datasources.csv.CSVRelation$$anonfun$csvParser$3.apply(CSVRelation.scala:125)
+	at org.apache.spark.sql.execution.datasources.csv.CSVRelation$$anonfun$csvParser$3.apply(CSVRelation.scala:94)
+	at org.apache.spark.sql.execution.datasources.csv.CSVFileFormat$$anonfun$buildReader$1$$anonfun$apply$2.apply(CSVFileFormat.scala:167)
+	at org.apache.spark.sql.execution.datasources.csv.CSVFileFormat$$anonfun$buildReader$1$$anonfun$apply$2.apply(CSVFileFormat.scala:166)
+	at scala.collection.Iterator$$anon$12.nextCur(Iterator.scala:434)
+	at scala.collection.Iterator$$anon$12.hasNext(Iterator.scala:440)
+	at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:408)
+	at org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.hasNext(FileScanRDD.scala:102)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIterator.processNext(Unknown Source)
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+	at org.apache.spark.sql.execution.WholeStageCodegenExec$$anonfun$8$$anon$1.hasNext(WholeStageCodegenExec.scala:377)
+	at org.apache.spark.sql.execution.columnar.InMemoryRelation$$anonfun$1$$anon$1.next(InMemoryRelation.scala:105)
+	at org.apache.spark.sql.execution.columnar.InMemoryRelation$$anonfun$1$$anon$1.next(InMemoryRelation.scala:97)
+	at org.apache.spark.storage.memory.MemoryStore.putIteratorAsValues(MemoryStore.scala:216)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:957)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:948)
+	at org.apache.spark.storage.BlockManager.doPut(BlockManager.scala:888)
+	at org.apache.spark.storage.BlockManager.doPutIterator(BlockManager.scala:948)
+	at org.apache.spark.storage.BlockManager.getOrElseUpdate(BlockManager.scala:694)
+	at org.apache.spark.rdd.RDD.getOrCompute(RDD.scala:334)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:285)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:38)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:38)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:38)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:96)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:53)
+	at org.apache.spark.scheduler.Task.run(Task.scala:99)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:282)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+17/08/12 10:35:18 INFO FileScanRDD: Reading File path: file:///tmp/Rtmp4PXkrb/spark_serialize_9a8a787a542a6526f7b8b63dcb8274bc5f4f7147d18bea7e0ea2e49b43a2635c.csv, range: 12280940-14227108, partition values: [empty row]
+17/08/12 10:35:18 ERROR Executor: Exception in task 1.0 in stage 5.0 (TID 7)
+java.text.ParseException: Unparseable number: "Rachid Vaz de Almeida; Comarca: São Paulo; Órgão julgador: 10ª Câmara de Direito Criminal; Data do julgamento: 06/12/2012; Data de registro: 13/12/2012)""
+	at java.text.NumberFormat.parse(NumberFormat.java:385)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$$anonfun$castTo$4.apply$mcD$sp(CSVInferSchema.scala:268)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$$anonfun$castTo$4.apply(CSVInferSchema.scala:268)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$$anonfun$castTo$4.apply(CSVInferSchema.scala:268)
+	at scala.util.Try.getOrElse(Try.scala:79)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$.castTo(CSVInferSchema.scala:268)
+	at org.apache.spark.sql.execution.datasources.csv.CSVRelation$$anonfun$csvParser$3.apply(CSVRelation.scala:125)
+	at org.apache.spark.sql.execution.datasources.csv.CSVRelation$$anonfun$csvParser$3.apply(CSVRelation.scala:94)
+	at org.apache.spark.sql.execution.datasources.csv.CSVFileFormat$$anonfun$buildReader$1$$anonfun$apply$2.apply(CSVFileFormat.scala:167)
+	at org.apache.spark.sql.execution.datasources.csv.CSVFileFormat$$anonfun$buildReader$1$$anonfun$apply$2.apply(CSVFileFormat.scala:166)
+	at scala.collection.Iterator$$anon$12.nextCur(Iterator.scala:434)
+	at scala.collection.Iterator$$anon$12.hasNext(Iterator.scala:440)
+	at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:408)
+	at org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.hasNext(FileScanRDD.scala:102)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIterator.processNext(Unknown Source)
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+	at org.apache.spark.sql.execution.WholeStageCodegenExec$$anonfun$8$$anon$1.hasNext(WholeStageCodegenExec.scala:377)
+	at org.apache.spark.sql.execution.columnar.InMemoryRelation$$anonfun$1$$anon$1.next(InMemoryRelation.scala:105)
+	at org.apache.spark.sql.execution.columnar.InMemoryRelation$$anonfun$1$$anon$1.next(InMemoryRelation.scala:97)
+	at org.apache.spark.storage.memory.MemoryStore.putIteratorAsValues(MemoryStore.scala:216)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:957)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:948)
+	at org.apache.spark.storage.BlockManager.doPut(BlockManager.scala:888)
+	at org.apache.spark.storage.BlockManager.doPutIterator(BlockManager.scala:948)
+	at org.apache.spark.storage.BlockManager.getOrElseUpdate(BlockManager.scala:694)
+	at org.apache.spark.rdd.RDD.getOrCompute(RDD.scala:334)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:285)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:38)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:38)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:38)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:96)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:53)
+	at org.apache.spark.scheduler.Task.run(Task.scala:99)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:282)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+17/08/12 10:35:18 WARN TaskSetManager: Lost task 1.0 in stage 5.0 (TID 7, localhost, executor driver): java.text.ParseException: Unparseable number: "Rachid Vaz de Almeida; Comarca: São Paulo; Órgão julgador: 10ª Câmara de Direito Criminal; Data do julgamento: 06/12/2012; Data de registro: 13/12/2012)""
+	at java.text.NumberFormat.parse(NumberFormat.java:385)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$$anonfun$castTo$4.apply$mcD$sp(CSVInferSchema.scala:268)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$$anonfun$castTo$4.apply(CSVInferSchema.scala:268)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$$anonfun$castTo$4.apply(CSVInferSchema.scala:268)
+	at scala.util.Try.getOrElse(Try.scala:79)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$.castTo(CSVInferSchema.scala:268)
+	at org.apache.spark.sql.execution.datasources.csv.CSVRelation$$anonfun$csvParser$3.apply(CSVRelation.scala:125)
+	at org.apache.spark.sql.execution.datasources.csv.CSVRelation$$anonfun$csvParser$3.apply(CSVRelation.scala:94)
+	at org.apache.spark.sql.execution.datasources.csv.CSVFileFormat$$anonfun$buildReader$1$$anonfun$apply$2.apply(CSVFileFormat.scala:167)
+	at org.apache.spark.sql.execution.datasources.csv.CSVFileFormat$$anonfun$buildReader$1$$anonfun$apply$2.apply(CSVFileFormat.scala:166)
+	at scala.collection.Iterator$$anon$12.nextCur(Iterator.scala:434)
+	at scala.collection.Iterator$$anon$12.hasNext(Iterator.scala:440)
+	at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:408)
+	at org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.hasNext(FileScanRDD.scala:102)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIterator.processNext(Unknown Source)
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+	at org.apache.spark.sql.execution.WholeStageCodegenExec$$anonfun$8$$anon$1.hasNext(WholeStageCodegenExec.scala:377)
+	at org.apache.spark.sql.execution.columnar.InMemoryRelation$$anonfun$1$$anon$1.next(InMemoryRelation.scala:105)
+	at org.apache.spark.sql.execution.columnar.InMemoryRelation$$anonfun$1$$anon$1.next(InMemoryRelation.scala:97)
+	at org.apache.spark.storage.memory.MemoryStore.putIteratorAsValues(MemoryStore.scala:216)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:957)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:948)
+	at org.apache.spark.storage.BlockManager.doPut(BlockManager.scala:888)
+	at org.apache.spark.storage.BlockManager.doPutIterator(BlockManager.scala:948)
+	at org.apache.spark.storage.BlockManager.getOrElseUpdate(BlockManager.scala:694)
+	at org.apache.spark.rdd.RDD.getOrCompute(RDD.scala:334)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:285)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:38)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:38)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:38)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:96)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:53)
+	at org.apache.spark.scheduler.Task.run(Task.scala:99)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:282)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+17/08/12 10:35:18 ERROR TaskSetManager: Task 1 in stage 5.0 failed 1 times; aborting job
+17/08/12 10:35:18 INFO TaskSchedulerImpl: Cancelling stage 5
+17/08/12 10:35:18 INFO Executor: Executor is trying to kill task 2.0 in stage 5.0 (TID 8)
+17/08/12 10:35:18 INFO TaskSchedulerImpl: Stage 5 was cancelled
+17/08/12 10:35:18 WARN TaskSetManager: Lost task 0.0 in stage 5.0 (TID 6, localhost, executor driver): java.text.ParseException: Unparseable number: "Jaime Ferreira Menino; Comarca: Franco da Rocha; Órgão julgador: 16ª Câmara de Direito Criminal; Data do julgamento: 22/11/2016; Data de registro: 24/11/2016)""
+	at java.text.NumberFormat.parse(NumberFormat.java:385)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$$anonfun$castTo$4.apply$mcD$sp(CSVInferSchema.scala:268)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$$anonfun$castTo$4.apply(CSVInferSchema.scala:268)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$$anonfun$castTo$4.apply(CSVInferSchema.scala:268)
+	at scala.util.Try.getOrElse(Try.scala:79)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$.castTo(CSVInferSchema.scala:268)
+	at org.apache.spark.sql.execution.datasources.csv.CSVRelation$$anonfun$csvParser$3.apply(CSVRelation.scala:125)
+	at org.apache.spark.sql.execution.datasources.csv.CSVRelation$$anonfun$csvParser$3.apply(CSVRelation.scala:94)
+	at org.apache.spark.sql.execution.datasources.csv.CSVFileFormat$$anonfun$buildReader$1$$anonfun$apply$2.apply(CSVFileFormat.scala:167)
+	at org.apache.spark.sql.execution.datasources.csv.CSVFileFormat$$anonfun$buildReader$1$$anonfun$apply$2.apply(CSVFileFormat.scala:166)
+	at scala.collection.Iterator$$anon$12.nextCur(Iterator.scala:434)
+	at scala.collection.Iterator$$anon$12.hasNext(Iterator.scala:440)
+	at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:408)
+	at org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.hasNext(FileScanRDD.scala:102)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIterator.processNext(Unknown Source)
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+	at org.apache.spark.sql.execution.WholeStageCodegenExec$$anonfun$8$$anon$1.hasNext(WholeStageCodegenExec.scala:377)
+	at org.apache.spark.sql.execution.columnar.InMemoryRelation$$anonfun$1$$anon$1.next(InMemoryRelation.scala:105)
+	at org.apache.spark.sql.execution.columnar.InMemoryRelation$$anonfun$1$$anon$1.next(InMemoryRelation.scala:97)
+	at org.apache.spark.storage.memory.MemoryStore.putIteratorAsValues(MemoryStore.scala:216)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:957)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:948)
+	at org.apache.spark.storage.BlockManager.doPut(BlockManager.scala:888)
+	at org.apache.spark.storage.BlockManager.doPutIterator(BlockManager.scala:948)
+	at org.apache.spark.storage.BlockManager.getOrElseUpdate(BlockManager.scala:694)
+	at org.apache.spark.rdd.RDD.getOrCompute(RDD.scala:334)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:285)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:38)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:38)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:38)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:96)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:53)
+	at org.apache.spark.scheduler.Task.run(Task.scala:99)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:282)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+17/08/12 10:35:18 INFO DAGScheduler: ShuffleMapStage 5 (sql at NativeMethodAccessorImpl.java:0) failed in 0,029 s due to Job aborted due to stage failure: Task 1 in stage 5.0 failed 1 times, most recent failure: Lost task 1.0 in stage 5.0 (TID 7, localhost, executor driver): java.text.ParseException: Unparseable number: "Rachid Vaz de Almeida; Comarca: São Paulo; Órgão julgador: 10ª Câmara de Direito Criminal; Data do julgamento: 06/12/2012; Data de registro: 13/12/2012)""
+	at java.text.NumberFormat.parse(NumberFormat.java:385)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$$anonfun$castTo$4.apply$mcD$sp(CSVInferSchema.scala:268)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$$anonfun$castTo$4.apply(CSVInferSchema.scala:268)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$$anonfun$castTo$4.apply(CSVInferSchema.scala:268)
+	at scala.util.Try.getOrElse(Try.scala:79)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$.castTo(CSVInferSchema.scala:268)
+	at org.apache.spark.sql.execution.datasources.csv.CSVRelation$$anonfun$csvParser$3.apply(CSVRelation.scala:125)
+	at org.apache.spark.sql.execution.datasources.csv.CSVRelation$$anonfun$csvParser$3.apply(CSVRelation.scala:94)
+	at org.apache.spark.sql.execution.datasources.csv.CSVFileFormat$$anonfun$buildReader$1$$anonfun$apply$2.apply(CSVFileFormat.scala:167)
+	at org.apache.spark.sql.execution.datasources.csv.CSVFileFormat$$anonfun$buildReader$1$$anonfun$apply$2.apply(CSVFileFormat.scala:166)
+	at scala.collection.Iterator$$anon$12.nextCur(Iterator.scala:434)
+	at scala.collection.Iterator$$anon$12.hasNext(Iterator.scala:440)
+	at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:408)
+	at org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.hasNext(FileScanRDD.scala:102)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIterator.processNext(Unknown Source)
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+	at org.apache.spark.sql.execution.WholeStageCodegenExec$$anonfun$8$$anon$1.hasNext(WholeStageCodegenExec.scala:377)
+	at org.apache.spark.sql.execution.columnar.InMemoryRelation$$anonfun$1$$anon$1.next(InMemoryRelation.scala:105)
+	at org.apache.spark.sql.execution.columnar.InMemoryRelation$$anonfun$1$$anon$1.next(InMemoryRelation.scala:97)
+	at org.apache.spark.storage.memory.MemoryStore.putIteratorAsValues(MemoryStore.scala:216)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:957)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:948)
+	at org.apache.spark.storage.BlockManager.doPut(BlockManager.scala:888)
+	at org.apache.spark.storage.BlockManager.doPutIterator(BlockManager.scala:948)
+	at org.apache.spark.storage.BlockManager.getOrElseUpdate(BlockManager.scala:694)
+	at org.apache.spark.rdd.RDD.getOrCompute(RDD.scala:334)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:285)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:38)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:38)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:38)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:96)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:53)
+	at org.apache.spark.scheduler.Task.run(Task.scala:99)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:282)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+Driver stacktrace:
+17/08/12 10:35:18 INFO DAGScheduler: Job 4 failed: sql at NativeMethodAccessorImpl.java:0, took 0,052573 s
+17/08/12 10:35:18 WARN BlockManager: Putting block rdd_33_2 failed due to an exception
+17/08/12 10:35:18 WARN BlockManager: Block rdd_33_2 could not be removed as it was not found on disk or in memory
+17/08/12 10:35:18 ERROR Executor: Exception in task 2.0 in stage 5.0 (TID 8)
+java.text.ParseException: Unparseable number: "RECURSO DESPROVIDO. "
+	at java.text.NumberFormat.parse(NumberFormat.java:385)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$$anonfun$castTo$4.apply$mcD$sp(CSVInferSchema.scala:268)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$$anonfun$castTo$4.apply(CSVInferSchema.scala:268)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$$anonfun$castTo$4.apply(CSVInferSchema.scala:268)
+	at scala.util.Try.getOrElse(Try.scala:79)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$.castTo(CSVInferSchema.scala:268)
+	at org.apache.spark.sql.execution.datasources.csv.CSVRelation$$anonfun$csvParser$3.apply(CSVRelation.scala:125)
+	at org.apache.spark.sql.execution.datasources.csv.CSVRelation$$anonfun$csvParser$3.apply(CSVRelation.scala:94)
+	at org.apache.spark.sql.execution.datasources.csv.CSVFileFormat$$anonfun$buildReader$1$$anonfun$apply$2.apply(CSVFileFormat.scala:167)
+	at org.apache.spark.sql.execution.datasources.csv.CSVFileFormat$$anonfun$buildReader$1$$anonfun$apply$2.apply(CSVFileFormat.scala:166)
+	at scala.collection.Iterator$$anon$12.nextCur(Iterator.scala:434)
+	at scala.collection.Iterator$$anon$12.hasNext(Iterator.scala:440)
+	at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:408)
+	at org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.hasNext(FileScanRDD.scala:102)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIterator.processNext(Unknown Source)
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+	at org.apache.spark.sql.execution.WholeStageCodegenExec$$anonfun$8$$anon$1.hasNext(WholeStageCodegenExec.scala:377)
+	at org.apache.spark.sql.execution.columnar.InMemoryRelation$$anonfun$1$$anon$1.next(InMemoryRelation.scala:105)
+	at org.apache.spark.sql.execution.columnar.InMemoryRelation$$anonfun$1$$anon$1.next(InMemoryRelation.scala:97)
+	at org.apache.spark.storage.memory.MemoryStore.putIteratorAsValues(MemoryStore.scala:216)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:957)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:948)
+	at org.apache.spark.storage.BlockManager.doPut(BlockManager.scala:888)
+	at org.apache.spark.storage.BlockManager.doPutIterator(BlockManager.scala:948)
+	at org.apache.spark.storage.BlockManager.getOrElseUpdate(BlockManager.scala:694)
+	at org.apache.spark.rdd.RDD.getOrCompute(RDD.scala:334)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:285)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:38)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:38)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:38)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:96)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:53)
+	at org.apache.spark.scheduler.Task.run(Task.scala:99)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:282)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+17/08/12 10:35:18 WARN TaskSetManager: Lost task 2.0 in stage 5.0 (TID 8, localhost, executor driver): java.text.ParseException: Unparseable number: "RECURSO DESPROVIDO. "
+	at java.text.NumberFormat.parse(NumberFormat.java:385)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$$anonfun$castTo$4.apply$mcD$sp(CSVInferSchema.scala:268)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$$anonfun$castTo$4.apply(CSVInferSchema.scala:268)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$$anonfun$castTo$4.apply(CSVInferSchema.scala:268)
+	at scala.util.Try.getOrElse(Try.scala:79)
+	at org.apache.spark.sql.execution.datasources.csv.CSVTypeCast$.castTo(CSVInferSchema.scala:268)
+	at org.apache.spark.sql.execution.datasources.csv.CSVRelation$$anonfun$csvParser$3.apply(CSVRelation.scala:125)
+	at org.apache.spark.sql.execution.datasources.csv.CSVRelation$$anonfun$csvParser$3.apply(CSVRelation.scala:94)
+	at org.apache.spark.sql.execution.datasources.csv.CSVFileFormat$$anonfun$buildReader$1$$anonfun$apply$2.apply(CSVFileFormat.scala:167)
+	at org.apache.spark.sql.execution.datasources.csv.CSVFileFormat$$anonfun$buildReader$1$$anonfun$apply$2.apply(CSVFileFormat.scala:166)
+	at scala.collection.Iterator$$anon$12.nextCur(Iterator.scala:434)
+	at scala.collection.Iterator$$anon$12.hasNext(Iterator.scala:440)
+	at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:408)
+	at org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.hasNext(FileScanRDD.scala:102)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIterator.processNext(Unknown Source)
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+	at org.apache.spark.sql.execution.WholeStageCodegenExec$$anonfun$8$$anon$1.hasNext(WholeStageCodegenExec.scala:377)
+	at org.apache.spark.sql.execution.columnar.InMemoryRelation$$anonfun$1$$anon$1.next(InMemoryRelation.scala:105)
+	at org.apache.spark.sql.execution.columnar.InMemoryRelation$$anonfun$1$$anon$1.next(InMemoryRelation.scala:97)
+	at org.apache.spark.storage.memory.MemoryStore.putIteratorAsValues(MemoryStore.scala:216)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:957)
+	at org.apache.spark.storage.BlockManager$$anonfun$doPutIterator$1.apply(BlockManager.scala:948)
+	at org.apache.spark.storage.BlockManager.doPut(BlockManager.scala:888)
+	at org.apache.spark.storage.BlockManager.doPutIterator(BlockManager.scala:948)
+	at org.apache.spark.storage.BlockManager.getOrElseUpdate(BlockManager.scala:694)
+	at org.apache.spark.rdd.RDD.getOrCompute(RDD.scala:334)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:285)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:38)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:38)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:38)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:323)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:287)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:96)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:53)
+	at org.apache.spark.scheduler.Task.run(Task.scala:99)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:282)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+17/08/12 10:35:18 INFO TaskSchedulerImpl: Removed TaskSet 5.0, whose tasks have all completed, from pool 
+17/08/12 11:02:01 INFO ContextCleaner: Cleaned accumulator 163
+17/08/12 11:02:01 INFO ContextCleaner: Cleaned accumulator 164
+17/08/12 11:02:01 INFO BlockManagerInfo: Removed broadcast_3_piece0 on 127.0.0.1:45446 in memory (size: 4.6 KB, free: 366.2 MB)
+17/08/12 11:02:01 INFO ContextCleaner: Cleaned accumulator 213
+17/08/12 11:02:01 INFO ContextCleaner: Cleaned accumulator 214
+17/08/12 11:02:01 INFO BlockManagerInfo: Removed broadcast_4_piece0 on 127.0.0.1:45446 in memory (size: 4.6 KB, free: 366.2 MB)
+17/08/12 11:02:01 INFO ContextCleaner: Cleaned accumulator 267
+17/08/12 11:02:01 INFO ContextCleaner: Cleaned accumulator 268
+17/08/12 11:02:01 INFO ContextCleaner: Cleaned accumulator 269
+17/08/12 11:02:01 INFO ContextCleaner: Cleaned accumulator 270
+17/08/12 11:02:01 INFO ContextCleaner: Cleaned accumulator 271
+17/08/12 11:02:01 INFO ContextCleaner: Cleaned accumulator 272
+17/08/12 11:02:01 INFO ContextCleaner: Cleaned accumulator 273
+17/08/12 11:02:01 INFO ContextCleaner: Cleaned accumulator 274
+17/08/12 11:02:01 INFO ContextCleaner: Cleaned accumulator 275
+17/08/12 11:02:01 INFO ContextCleaner: Cleaned accumulator 276
+17/08/12 11:02:01 INFO ContextCleaner: Cleaned accumulator 277
+17/08/12 11:02:01 INFO ContextCleaner: Cleaned accumulator 278
+17/08/12 11:02:01 INFO ContextCleaner: Cleaned accumulator 279
+17/08/12 11:02:01 INFO ContextCleaner: Cleaned shuffle 1
+17/08/12 11:02:01 INFO BlockManagerInfo: Removed broadcast_6_piece0 on 127.0.0.1:45446 in memory (size: 12.3 KB, free: 366.2 MB)
+17/08/12 11:02:01 INFO BlockManagerInfo: Removed broadcast_2_piece0 on 127.0.0.1:45446 in memory (size: 12.4 KB, free: 366.2 MB)
+17/08/12 11:02:01 INFO ContextCleaner: Cleaned shuffle 0
+17/08/12 11:02:01 INFO ContextCleaner: Cleaned accumulator 66
+17/08/12 11:02:01 INFO ContextCleaner: Cleaned accumulator 65
+17/08/12 11:02:01 INFO ContextCleaner: Cleaned accumulator 64
+17/08/12 11:02:01 INFO ContextCleaner: Cleaned accumulator 63
+17/08/12 11:02:01 INFO ContextCleaner: Cleaned accumulator 62
+17/08/12 11:02:01 INFO ContextCleaner: Cleaned accumulator 61
+17/08/12 11:02:01 INFO ContextCleaner: Cleaned accumulator 60
+17/08/12 11:02:01 INFO ContextCleaner: Cleaned accumulator 59
+17/08/12 11:02:01 INFO ContextCleaner: Cleaned accumulator 58
+17/08/12 11:02:01 INFO ContextCleaner: Cleaned accumulator 57
+17/08/12 11:02:01 INFO ContextCleaner: Cleaned accumulator 56
+17/08/12 11:02:01 INFO ContextCleaner: Cleaned accumulator 55
+17/08/12 11:02:01 INFO ContextCleaner: Cleaned accumulator 54
+17/08/12 11:02:01 INFO BlockManager: Removing RDD 11
+17/08/12 11:02:01 INFO ContextCleaner: Cleaned RDD 11
+17/08/12 11:02:01 INFO BlockManagerInfo: Removed broadcast_1_piece0 on 127.0.0.1:45446 in memory (size: 23.8 KB, free: 366.3 MB)
+17/08/12 11:02:01 INFO ContextCleaner: Cleaned accumulator 53
+17/08/12 11:02:01 INFO ContextCleaner: Cleaned accumulator 52
+17/08/12 11:02:01 INFO ContextCleaner: Cleaned accumulator 51
+17/08/12 11:02:01 INFO ContextCleaner: Cleaned accumulator 50
+17/08/12 11:02:01 INFO BlockManagerInfo: Removed broadcast_0_piece0 on 127.0.0.1:45446 in memory (size: 4.6 KB, free: 366.3 MB)
+17/08/12 11:02:01 INFO ContextCleaner: Cleaned accumulator 1
+17/08/12 11:02:01 INFO ContextCleaner: Cleaned accumulator 0
+17/08/12 16:57:58 INFO SparkContext: Invoking stop() from shutdown hook
+17/08/12 16:57:58 INFO SparkUI: Stopped Spark web UI at http://127.0.0.1:4040
+17/08/12 16:57:58 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+17/08/12 16:57:58 INFO MemoryStore: MemoryStore cleared
+17/08/12 16:57:58 INFO BlockManager: BlockManager stopped
+17/08/12 16:57:58 INFO BlockManagerMaster: BlockManagerMaster stopped
+17/08/12 16:57:58 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+17/08/12 16:57:58 INFO SparkContext: Successfully stopped SparkContext
+17/08/12 16:57:58 INFO ShutdownHookManager: Shutdown hook called
+17/08/12 16:57:58 INFO ShutdownHookManager: Deleting directory /tmp/spark-19de1043-1478-488b-9991-c905c006af2a
