@@ -14,10 +14,10 @@ knitr::opts_chunk$set(echo = TRUE)
 library(limer)
 library(tidyverse)
 library(stringr)
-library(reshape)
 library(ggplot2)
 library(cowplot)
 library(RColorBrewer)
+library(lubridate)
 ```
 
 ```{r echo=F, message=F, include=F}
@@ -50,20 +50,18 @@ attributes(data)$variable.labels<-nomes
 
 ## Análise descritiva
 
-### Sexo
-
-Conforme se verifica, a maioria das decisões refere-se a pessoas do sexo masculino.
-
-#### Gráfico 1 - Distribuição das decisões sobre indulto conforme o sexo do condenado
+## Decisão
 
 ```{r echo=F, message=F,fig.height=5,fig.width=8}
-ggplot(data,aes(x=A6,fill=A6))+
+data$C12<-na_if(data$C12,"NI")
+data$C12<-factor(data$C12,labels=c("Concedeu Parcialmente","Concedeu integralmente","Indeferiu o pedido"))
+
+ggplot(data[!is.na(data$C12),],aes(x=str_wrap(C12,10),fill=C12))+
   geom_bar(stat="count")+
-  labs(x="Sexo",y="Quantidade",
+  labs(x="Decisão",y="Quantidade",
        caption="Fonte: TJSP,TJRJ,TJSC,TJPE,TJDFT")+
   geom_text(stat="count",aes(label=..count..), vjust=-.5)+
-  scale_fill_manual(values=c("purple","darkgreen"),
-                    guide_legend("Sexo"))+
+scale_fill_manual(values=brewer.pal(5,"Set1"),guide=guide_legend("none"))+
   theme(
     legend.position = "bottom"
   )
@@ -83,14 +81,61 @@ ggplot(data,aes(x=A1,fill=A1))+
   labs(x="Unidade federativa",y="Quantidade",
        caption="Fonte: TJSP,TJRJ,TJSC,TJPE,TJDFT")+
   geom_text(stat="count",aes(label=..count..), vjust=-.5)+
-  scale_fill_manual(values=brewer.pal(3,"Set1"),
-                    guide_legend("UF"))+
+  scale_fill_manual(values=brewer.pal(5,"Set1")
+                    ,guide=guide_legend("none"))+
   theme(
     legend.position = "bottom"
   )
 
 
 ```
+
+
+### Unidade federativa e decisão
+
+### Unidade federativa
+
+A unidade federativa onde logramos obter mais casos foi o Pernambuco...
+
+#### Gráfico 2 - Distribuição das decisões sobre indulto conforme a unidade federativa do Tribunal de Justiça
+
+```{r echo=F, message=F,fig.height=5,fig.width=8}
+
+  
+ggplot(data,aes(x=A1,fill=C12))+
+  geom_bar()+
+  labs(x="Unidade federativa",y="Quantidade",
+       caption="Fonte: TJSP,TJRJ,TJSC,TJPE,TJDFT")+
+  geom_text(stat="count",aes(label=..count..))+
+  scale_fill_manual(values=brewer.pal(5,"Set1")
+                    ,guide=guide_legend("C12"))+
+  theme(
+    legend.position = "bottom"
+  )
+
+
+```
+
+### Sexo por estado
+
+Conforme se verifica, a maioria das decisões refere-se a pessoas do sexo masculino.
+
+#### Gráfico 1 - Distribuição das decisões sobre indulto conforme o sexo do condenado
+
+```{r echo=F, message=F,fig.height=5,fig.width=8}
+ggplot(data,aes(x=A1,fill=A6))+
+  geom_bar()+
+  labs(x="Sexo",y="Quantidade",
+       caption="Fonte: TJSP,TJRJ,TJSC,TJPE,TJDFT")+
+  geom_text(stat="count",aes(label=rev(..count..)),vjust=-.5)+
+  scale_fill_manual(values=brewer.pal(3,"Set1"),
+                    guide_legend("Sexo"))+
+  theme(
+    legend.position = "bottom"
+  )
+```
+
+
 
 ### Cor do condenado
 
@@ -98,17 +143,85 @@ ggplot(data,aes(x=A1,fill=A1))+
 
 ```{r echo=F, message=F,fig.height=5,fig.width=8}
 
-ggplot(data,aes(x=A10,fill=A10))+
-  geom_bar(stat="count")+
+ggplot(filter(data,A10!="NI"),aes(x=A1,fill=A10))+
+  geom_bar()+
   labs(x="Cor",y="Quantidade",
        caption="Fonte: TJSP,TJRJ,TJSC,TJPE,TJDFT")+
-  geom_text(stat="count",aes(label=..count..), vjust=-.5)+
-  scale_fill_manual(values=brewer.pal(4,"Set1"),
-                    guide_legend("Cor"))+
+  geom_text(stat="count",aes(label=..count..))+
+  scale_fill_manual(values=brewer.pal(4,"Set1"))+
   theme(
     legend.position = "bottom"
   )
 
 ```
+
+
+## Idade
+
+O histograma abaixo mostra a distribuição da idade dos 
+
+```{r}
+data$A7<-as.Date(data$A7)
+data$idade<-data$A7 %>%
+  interval(today()) %>%
+  as.period() %>%
+  year() %>% 
+  na_if(0)
+
+ggplot(data = data,aes(idade,fill=..x..)) +
+  geom_histogram(binwidth = 5)+
+  scale_fill_gradient("Idade",low = "green", high = "blue")
+
+```
+
+## Estado Civil
+
+```{r echo=F, message=F,fig.height=5,fig.width=8}
+data$A11<-as.factor(data$A11)
+levels(data$A11)[3]<-"Não informado"
+ggplot(data,aes(x=A11,fill=A11))+
+  geom_bar(stat="count")+
+  labs(x="Estado Civil",y="Quantidade",
+       caption="Fonte: TJSP,TJRJ,TJSC,TJPE,TJDFT")+
+  geom_text(stat="count",aes(label=..count..), vjust=-.5)+
+  scale_fill_manual(values=brewer.pal(5,"Set1"),
+                    guide=guide_legend("none"))+
+  theme(
+    legend.position = "bottom"
+  )
+
+```
+
+
+
+```{r echo=F, message=F,fig.height=5,fig.width=8}
+
+primario<-data %>% 
+  select(A1,A17,C12) %>% 
+  na.omit() %>% 
+  mutate(decisao=ifelse(str_detect(C12,"Concedeu"),"Concedido","Negado"))
+ggplot(primario,aes(x=A1,fill=A17))+
+  geom_bar(stat="count")+
+  labs(x="Primário?",y="Quantidade",
+       caption="Fonte: TJSP,TJRJ,TJSC,TJPE,TJDFT")+
+  geom_text(stat="count",aes(label=..count..), vjust=-.5)+
+  scale_fill_manual(values=c("purple","darkgreen"))+
+  theme(
+    legend.position = "bottom"
+  )+
+  facet_grid(~decisao)
+```
+
+
+## Análise das decisões de segunda instância
+
+
+
+### São Paulo
+
+
+#### Parecer do Conselho Penitenciário
+
+
 
 
